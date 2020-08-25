@@ -25,30 +25,12 @@ The second input will be a list of object with warehouse name and inventory amou
 
 You can assume that the list of warehouses is pre-sorted based on cost. The first warehouse will be less expensive to ship from than the second warehouse. 
 
-You can use any language of your choice to write the solution (internally we use Typescript/Javascript, Python, and some Java). Please write unit tests with your code, a few are mentioned below, but these are not comprehensive. Fork the repository and put your solution inside of the src directory and include a way to run your tests!
+### Running the Tests
 
-### Examples
+Download or clone this repository and change your working directory by running the following in your shell:
 
-*Happy Case, exact inventory match!**
+`cd recruiting-exercises/inventory-allocator/src`
 
-Input: `{ apple: 1 }, [{ name: owd, inventory: { apple: 1 } }]`  
-Output: `[{ owd: { apple: 1 } }]`
+Execute the tests by running the following:
 
-*Not enough inventory -> no allocations!*
-
-Input: `{ apple: 1 }, [{ name: owd, inventory: { apple: 0 } }]`  
-Output: `[]`
-
-*Should split an item across warehouses if that is the only way to completely ship an item:*
-
-Input: `{ apple: 10 }, [{ name: owd, inventory: { apple: 5 } }, { name: dm, inventory: { apple: 5 }}]`  
-Output: `[{ dm: { apple: 5 }}, { owd: { apple: 5 } }]`
-
-### What are we looking for
-
-We'll evaluate your code via the following guidelines in no particular order:
-
-1. **Readability**: naming, spacing, consistency
-2. **Correctness**: is the solution correct and does it solve the problem
-1. **Test Code Quality**: Is the test code comperehensive and covering all cases.
-1. **Tool/Language mastery**: is the code using up to date syntax and techniques. 
+`python3 inventoryAllocator.py`
