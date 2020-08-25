@@ -23,7 +23,7 @@ class InventoryAllocator:
                             optimal_warehouse[warehouse['name']] = {thing : shipment_to_warehouse}
                         order[thing] -= shipment_to_warehouse
             optimized_shipment.append(optimal_warehouse)
-        if InventoryAllocator.fullyConsumed(order): return optimized_shipment
+        if self.fullyConsumed(order): return optimized_shipment
         return []
 
 class InventoryAllocatorTest:
@@ -94,7 +94,7 @@ class InventoryAllocatorTest:
                     { 'name': 'owd', 'inventory': {'apple': 4, } }, 
                     { 'name': 'sjc', 'inventory': {'orange': 3, } }
                 ]
-            )
+            ) == [{'owd': {'apple': 3}}, {}]
         ) 
 
 tests = InventoryAllocatorTest()
@@ -104,3 +104,4 @@ tests.split_shipment()
 tests.order_cannot_be_optimized()
 tests.different_thing_types_with_seperate_warehouse_allocation()
 tests.order_gets_completed_by_closest_warehouse()
+tests.order_gets_completed_by_single_warehouse()
